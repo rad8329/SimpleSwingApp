@@ -37,8 +37,6 @@ public class ZonaTabla extends AbstractTableModel implements TablaModeloInterfac
     public void remover(int fila){
         datos.remove(fila);
 
-        //uao.Main.archivador.guardarZonas(datos);
-
         fireTableRowsDeleted(fila, fila);
     }
     
