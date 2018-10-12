@@ -41,8 +41,7 @@ public class ZonaArchivador implements AlamacenamientoInterface<Zona> {
         try {
             FileReader manejador = new FileReader(this.archivo);
             BufferedReader buffer = new BufferedReader(manejador);
-
-            //if (uao.modelos.Zona.modelo.getRowCount() > 0) {
+            
             String linea;
             int contador = 0;
 
@@ -73,7 +72,6 @@ public class ZonaArchivador implements AlamacenamientoInterface<Zona> {
                     + ruta
                     + "zonas.txt"
             );
-            //}
         } catch (IOException ex) {
             System.err.println(
                     "Error al cargar el archivo : "
