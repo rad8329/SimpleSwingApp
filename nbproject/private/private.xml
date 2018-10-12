@@ -5,7 +5,8 @@
         <group>
             <file>file:/home/rdiaz/Source/java/Universidad/BasesDeDatos/ControlAsistencia/src/uao/modelos/Zona.java</file>
             <file>file:/home/rdiaz/Source/java/Universidad/BasesDeDatos/ControlAsistencia/.gitignore</file>
-            <file>file:/home/rdiaz/Source/java/Universidad/BasesDeDatos/ControlAsistencia/src/uao/controles/ZonaControlador.java</file>
+            <file>file:/home/rdiaz/Source/java/Universidad/BasesDeDatos/ControlAsistencia/src/uao/almacenamiento/ZonaArchivador.java</file>
+            <file>file:/home/rdiaz/Source/java/Universidad/BasesDeDatos/ControlAsistencia/src/uao/modelos/ZonaTabla.java</file>
         </group>
     </open-files>
 </project-private>
