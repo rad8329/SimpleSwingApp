@@ -3,7 +3,7 @@ package uao.vistas;
 import uao.modelos.Zona;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import uao.excepciones.ValidacionException;
+import uao.excepciones.ValidacionExcepcion;
 import uao.controles.ZonaControlador;
 
 public class ZonaPanel extends javax.swing.JPanel {
@@ -247,7 +247,7 @@ public class ZonaPanel extends javax.swing.JPanel {
             } catch (NumberFormatException ex) {
                 System.err.println(ex.getMessage());
 
-                throw new ValidacionException("Código debe ser númerico y no vacío");
+                throw new ValidacionExcepcion("Código debe ser númerico y no vacío");
             }
 
             Zona zona = new Zona(
@@ -265,7 +265,7 @@ public class ZonaPanel extends javax.swing.JPanel {
                 controlador.agregar(zona, true);
             }
 
-        } catch (ValidacionException ex) {
+        } catch (ValidacionExcepcion ex) {
             errores = true;
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }

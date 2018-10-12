@@ -1,6 +1,6 @@
 package uao.modelos;
 
-import uao.excepciones.ValidacionException;
+import uao.excepciones.ValidacionExcepcion;
 
 public class Zona implements ValidadorInterface {
 
@@ -64,22 +64,22 @@ public class Zona implements ValidadorInterface {
     }
 
     @Override
-    public void validar() throws ValidacionException {
+    public void validar() throws ValidacionExcepcion {
         if (this.getCodigo_zona() < 0) {
-            throw new ValidacionException("El código debe ser mayor a cero");
+            throw new ValidacionExcepcion("El código debe ser mayor a cero");
         }
 
         if (this.getNombre().isEmpty()) {
-            throw new ValidacionException("El nombre no debe ser vacio");
+            throw new ValidacionExcepcion("El nombre no debe ser vacio");
         }
 
         if (this.getDescripcion().isEmpty()) {
-            throw new ValidacionException("La descripción no debe ser vacio");
+            throw new ValidacionExcepcion("La descripción no debe ser vacio");
         }
 
         if (this.tieneControl_de_acceso()
                 && this.getDireccion_ip_cerradura().isEmpty()) {
-            throw new ValidacionException("La dirección IP no debe ser vacio");
+            throw new ValidacionExcepcion("La dirección IP no debe ser vacio");
         }
     }
 

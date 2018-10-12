@@ -1,8 +1,8 @@
 package uao.modelos;
 
-import uao.excepciones.ValidacionException;
+import uao.excepciones.ValidacionExcepcion;
 
 public interface ValidadorInterface {
 
-    public void validar() throws ValidacionException;
+    public void validar() throws ValidacionExcepcion;
 }

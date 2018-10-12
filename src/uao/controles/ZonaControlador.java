@@ -1,7 +1,7 @@
 package uao.controles;
 
 import uao.almacenamiento.ZonaArchivador;
-import uao.excepciones.ValidacionException;
+import uao.excepciones.ValidacionExcepcion;
 import uao.modelos.Zona;
 import uao.modelos.ZonaTabla;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class ZonaControlador implements ControladorInterface<Zona> {
     }
 
     @Override
-    public void agregar(Zona modelo, boolean guardar) throws ValidacionException {
+    public void agregar(Zona modelo, boolean guardar) throws ValidacionExcepcion {
         modelo.validar();
 
         TABLA.agregar(modelo);
@@ -36,7 +36,7 @@ public class ZonaControlador implements ControladorInterface<Zona> {
     }
 
     @Override
-    public void actualizar(int fila, Zona modelo) throws ValidacionException {
+    public void actualizar(int fila, Zona modelo) throws ValidacionExcepcion {
         modelo.validar();
 
         Zona zonaActual = conseguir(fila);
