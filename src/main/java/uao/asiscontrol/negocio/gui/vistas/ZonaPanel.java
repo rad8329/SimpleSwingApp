@@ -1,20 +1,32 @@
-package uao.vistas;
+package main.java.uao.asiscontrol.negocio.gui.vistas;
 
-import uao.modelos.Zona;
+import main.java.uao.asiscontrol.negocio.entidad.Zona;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import uao.excepciones.ValidacionExcepcion;
-import uao.controles.ZonaControlador;
+import main.java.uao.asiscontrol.negocio.excepcion.ValidacionExcepcion;
+import main.java.uao.asiscontrol.negocio.gui.modelos.ZonaTablaModelo;
+import main.java.uao.asiscontrol.negocio.gui.controles.ZonaControlador;
 
 public class ZonaPanel extends javax.swing.JPanel {
 
-    public static ZonaControlador controlador = new ZonaControlador();
+    private final ZonaTablaModelo modelo;
+    protected final ZonaControlador control;
 
     /**
-     * Creates new form PanelZonas
+     *
+     * @param modelo
+     * @param control
      */
-    public ZonaPanel() {
+    public ZonaPanel(ZonaTablaModelo modelo, ZonaControlador control) {
+        this.modelo = modelo;
+        this.control = control;
+        setName(control.getTitulo());
+
         initComponents();
+    }
+
+    public ZonaTablaModelo getModelo() {
+        return modelo;
     }
 
     /**
@@ -47,7 +59,7 @@ public class ZonaPanel extends javax.swing.JPanel {
 
         PanelFormulario.setBackground(new java.awt.Color(240, 236, 232));
 
-        BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/iconos/save-icon.png"))); // NOI18N
+        BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/recursos/iconos/save-icon.png"))); // NOI18N
         BotonGuardar.setText("Guardar");
         BotonGuardar.setFocusable(false);
         BotonGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -56,7 +68,7 @@ public class ZonaPanel extends javax.swing.JPanel {
             }
         });
 
-        BotonLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/iconos/clear-icon.png"))); // NOI18N
+        BotonLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/recursos/iconos/clear-icon.png"))); // NOI18N
         BotonLimpiar.setText("Limpiar");
         BotonLimpiar.setFocusable(false);
         BotonLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -65,7 +77,7 @@ public class ZonaPanel extends javax.swing.JPanel {
             }
         });
 
-        BotonBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/iconos/delete-icon.png"))); // NOI18N
+        BotonBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/recursos/iconos/delete-icon.png"))); // NOI18N
         BotonBorrar.setText("Eliminar");
         BotonBorrar.setFocusable(false);
         BotonBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +121,7 @@ public class ZonaPanel extends javax.swing.JPanel {
         ScrollPanelTabla.setBorder(null);
         ScrollPanelTabla.setFocusable(false);
 
-        Tablezonas.setModel(uao.controles.ZonaControlador.TABLA);
+        Tablezonas.setModel(this.modelo);
         Tablezonas.setFocusable(false);
         Tablezonas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -245,24 +257,23 @@ public class ZonaPanel extends javax.swing.JPanel {
             try {
                 codigo = Integer.parseInt(TextFieldCodigo.getText());
             } catch (NumberFormatException ex) {
-                System.err.println(ex.getMessage());
 
                 throw new ValidacionExcepcion("Código debe ser númerico y no vacío");
             }
 
             Zona zona = new Zona(
                     codigo,
-                    TextFieldCodigo.getText(),
                     TextFieldNombre.getText(),
+                    TextAreaDescripcion.getText(),
                     CheckBoxControlAcceso.isSelected(),
                     TextFieldDireccionIP.getText()
             );
 
             if (!LabelID.getText().isEmpty()) {
-                controlador.actualizar(Integer.parseInt(LabelID.getText()), zona);
+                control.actualizarRegistro(Integer.parseInt(LabelID.getText()), zona);
                 mensaje = "La zona fue actualizado con éxito";
             } else {
-                controlador.agregar(zona, true);
+                control.agregarRegistro(zona, true);
             }
 
         } catch (ValidacionExcepcion ex) {
@@ -285,7 +296,7 @@ public class ZonaPanel extends javax.swing.JPanel {
         JTable source = (JTable) evt.getSource();
         int fila = source.rowAtPoint(evt.getPoint());
 
-        Zona zona = controlador.conseguir(fila);
+        Zona zona = control.conseguirRegistro(fila);
 
         TextFieldCodigo.setText(Integer.toString(zona.getCodigo_zona()));
         TextFieldNombre.setText(zona.getNombre());
@@ -293,7 +304,7 @@ public class ZonaPanel extends javax.swing.JPanel {
         TextFieldDireccionIP.setText(zona.getDireccion_ip_cerradura());
         CheckBoxControlAcceso.setSelected(zona.tieneControl_de_acceso());
 
-        LabelID.setText(Integer.toString(fila));//Para saber si debemos actualizar
+        LabelID.setText(Integer.toString(fila));//Para saber si debemos actualizarRegistro
     }//GEN-LAST:event_TablezonasMouseClicked
 
     private void BotonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBorrarActionPerformed
@@ -301,7 +312,7 @@ public class ZonaPanel extends javax.swing.JPanel {
         if (!LabelID.getText().isEmpty()) {
             int fila = Integer.parseInt(LabelID.getText());
 
-            controlador.remover(fila);
+            control.removerRegistro(fila);
 
             limpiar();
 

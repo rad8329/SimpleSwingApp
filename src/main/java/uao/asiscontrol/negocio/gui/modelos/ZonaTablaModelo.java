@@ -1,9 +1,20 @@
-package uao.modelos;
+package main.java.uao.asiscontrol.negocio.gui.modelos;
 
+import main.java.uao.asiscontrol.negocio.entidad.Zona;
 import javax.swing.table.AbstractTableModel;
-import java.util.ArrayList;
+import main.java.uao.asiscontrol.negocio.gui.controles.ZonaControlador;
 
-public class ZonaTabla extends AbstractTableModel implements TablaModeloInterface<Zona>{
+/**
+ *
+ * @author rdiaz
+ */
+public class ZonaTablaModelo extends AbstractTableModel {
+
+    private final ZonaControlador controlador;
+
+    public ZonaTablaModelo(ZonaControlador controlador) {
+        this.controlador = controlador;
+    }
 
     private final String[] columnas = {
         "#",
@@ -23,37 +34,6 @@ public class ZonaTabla extends AbstractTableModel implements TablaModeloInterfac
         String.class
     };
 
-    final private ArrayList<Zona> datos = new ArrayList();
-
-    @Override
-    public Zona conseguir(int fila) {
-        Zona zona = (Zona) datos.get(fila);
-
-        return zona;
-    }
-
-
-    @Override
-    public void remover(int fila){
-        datos.remove(fila);
-
-        fireTableRowsDeleted(fila, fila);
-    }
-    
-    @Override
-    public void agregar(Zona modelo) {
-
-        datos.add(modelo);
-
-        fireTableRowsInserted(datos.size() - 1, datos.size() - 1);
-    }
-    
-    @Override
-    public void actualizar(int fila) {
-        //Actualizamos la fila de tabla
-        fireTableRowsUpdated(fila, fila);
-    }
-
     @Override
     public String getColumnName(int columna) {
         return columnas[columna];
@@ -61,7 +41,7 @@ public class ZonaTabla extends AbstractTableModel implements TablaModeloInterfac
 
     @Override
     public int getRowCount() {
-        return datos.size();
+        return controlador.contarRegistros();
     }
 
     @Override
@@ -76,7 +56,7 @@ public class ZonaTabla extends AbstractTableModel implements TablaModeloInterfac
 
     @Override
     public Object getValueAt(int fila, int columna) {
-        Zona zona = conseguir(fila);
+        Zona zona = controlador.conseguirRegistro(fila);
 
         if (zona instanceof Zona) {
             switch (columna) {
@@ -99,10 +79,5 @@ public class ZonaTabla extends AbstractTableModel implements TablaModeloInterfac
         }
 
         return null;
-    }
-
-    @Override
-    public ArrayList<Zona> getDatos() {
-        return datos;
     }
 }

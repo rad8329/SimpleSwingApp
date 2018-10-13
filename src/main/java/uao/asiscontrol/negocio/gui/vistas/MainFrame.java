@@ -1,4 +1,6 @@
-package uao.vistas;
+package main.java.uao.asiscontrol.negocio.gui.vistas;
+
+import main.java.uao.asiscontrol.Aplicacion;
 
 /**
  *
@@ -6,10 +8,15 @@ package uao.vistas;
  */
 public class MainFrame extends javax.swing.JFrame {
 
+    private final Aplicacion aplicacion;
+    
     /**
      * Creates new form PrincipalFrame
+     * @param aplicacion
      */
-    public MainFrame() {
+    public MainFrame(Aplicacion aplicacion) {
+        this.aplicacion = aplicacion;
+        
         initComponents();
     }
 
@@ -24,7 +31,7 @@ public class MainFrame extends javax.swing.JFrame {
         setBackground(new java.awt.Color(240, 236, 232));
         setResizable(false);
 
-        LabelEncabezado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/media/imagenes/encabezado.png"))); // NOI18N
+        LabelEncabezado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/recursos/imagenes/encabezado.png"))); // NOI18N
         LabelEncabezado.setFocusable(false);
 
         TabbedPanel.setBackground(new java.awt.Color(240, 236, 232));
@@ -34,7 +41,9 @@ public class MainFrame extends javax.swing.JFrame {
         TabbedPanel.setFocusable(false);
         TabbedPanel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         TabbedPanel.setName("panelTabs"); // NOI18N
-        TabbedPanel.add("Zonas", new uao.vistas.ZonaPanel());
+        aplicacion.getPaneles().forEach((panel) -> {
+            TabbedPanel.add(panel.getName(), panel);
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

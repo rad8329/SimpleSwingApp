@@ -1,8 +1,9 @@
-package uao.modelos;
+package main.java.uao.asiscontrol.negocio.entidad;
 
-import uao.excepciones.ValidacionExcepcion;
+import main.java.uao.asiscontrol.negocio.excepcion.ValidacionExcepcion;
+import main.java.uao.asiscontrol.negocio.gui.vistas.ZonaPanel;
 
-public class Zona implements ValidadorInterface {
+public class Zona implements EntidadInterface {
 
     private int codigo_zona;
     private String nombre;

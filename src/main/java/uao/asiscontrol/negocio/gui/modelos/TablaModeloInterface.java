@@ -1,4 +1,4 @@
-package uao.modelos;
+package main.java.uao.asiscontrol.negocio.gui.modelos;
 
 import java.util.ArrayList;
 
