@@ -1,7 +1,6 @@
 package main.java.uao.asiscontrol.negocio.entidad;
 
 import main.java.uao.asiscontrol.negocio.excepcion.ValidacionExcepcion;
-import main.java.uao.asiscontrol.negocio.gui.vistas.ZonaPanel;
 
 public class Zona implements EntidadInterface {
 

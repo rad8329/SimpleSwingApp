@@ -9,19 +9,21 @@ import main.java.uao.asiscontrol.Aplicacion;
 public class MainFrame extends javax.swing.JFrame {
 
     private final Aplicacion aplicacion;
-    
+
     /**
      * Creates new form PrincipalFrame
+     * 
      * @param aplicacion
      */
     public MainFrame(Aplicacion aplicacion) {
         this.aplicacion = aplicacion;
-        
+
         initComponents();
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         LabelEncabezado = new javax.swing.JLabel();
@@ -31,7 +33,8 @@ public class MainFrame extends javax.swing.JFrame {
         setBackground(new java.awt.Color(240, 236, 232));
         setResizable(false);
 
-        LabelEncabezado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/recursos/imagenes/encabezado.png"))); // NOI18N
+        LabelEncabezado
+                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/recursos/imagenes/encabezado.png"))); // NOI18N
         LabelEncabezado.setFocusable(false);
 
         TabbedPanel.setBackground(new java.awt.Color(240, 236, 232));
@@ -41,28 +44,29 @@ public class MainFrame extends javax.swing.JFrame {
         TabbedPanel.setFocusable(false);
         TabbedPanel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         TabbedPanel.setName("panelTabs"); // NOI18N
+        
         aplicacion.getPaneles().forEach((panel) -> {
             TabbedPanel.add(panel.getName(), panel);
         });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+
         getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LabelEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TabbedPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(LabelEncabezado)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TabbedPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(LabelEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE,
+                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                        layout.createSequentialGroup().addContainerGap()
+                                .addComponent(TabbedPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addContainerGap()));
+        layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGroup(
+                javax.swing.GroupLayout.Alignment.TRAILING,
+                layout.createSequentialGroup().addComponent(LabelEncabezado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TabbedPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 585,
+                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap()));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

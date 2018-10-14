@@ -7,6 +7,8 @@ import main.java.uao.asiscontrol.negocio.repositorio.ZonaArchivoRepositorio;
 import java.util.ArrayList;
 import main.java.uao.asiscontrol.negocio.gui.controles.ControladorInterface;
 import javax.swing.JPanel;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 /**
  *
@@ -42,8 +44,10 @@ public class Aplicacion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        /**
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the
+         * default look and feel. For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -51,7 +55,10 @@ public class Aplicacion {
                 | InstantiationException
                 | IllegalAccessException
                 | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Aplicacion.class.getName()).log(java.util.logging.Level.SEVERE, ex.getMessage());
+            Logger.getLogger(Aplicacion.class.getName()).log(
+                    Level.SEVERE,
+                    ex.getMessage()
+            );
         }
 
         /* Create and display the form */
