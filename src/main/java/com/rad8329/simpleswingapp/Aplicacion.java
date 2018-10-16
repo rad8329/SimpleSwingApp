@@ -1,6 +1,6 @@
 package com.rad8329.simpleswingapp;
 
-import com.rad8329.simpleswingapp.negocio.gui.controles.ControladorInterface;
+import com.rad8329.simpleswingapp.negocio.gui.controles.LanzadorInterface;
 import com.rad8329.simpleswingapp.negocio.gui.controles.ZonaControlador;
 import com.rad8329.simpleswingapp.negocio.gui.vistas.MainFrame;
 import com.rad8329.simpleswingapp.negocio.repositorio.ZonaArchivoRepositorio;
@@ -10,14 +10,15 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  * @author rad8329
  */
 public class Aplicacion {
 
-    private final ArrayList<ControladorInterface> controladores;
+    private final ArrayList<LanzadorInterface> controladores;
 
-    private Aplicacion(ArrayList<ControladorInterface> controladores) {
+    private Aplicacion(ArrayList<LanzadorInterface> controladores) {
         this.controladores = controladores;
 
         cargarTodoLosRegistros();
@@ -60,7 +61,7 @@ public class Aplicacion {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            ArrayList<ControladorInterface> controles = new ArrayList<>();
+            ArrayList<LanzadorInterface> controles = new ArrayList<>();
 
             controles.add(new ZonaControlador(
                     "Zonas",

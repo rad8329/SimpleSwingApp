@@ -8,6 +8,8 @@ import java.util.logging.Logger;
  */
 public class ValidacionExcepcion extends Exception {
 
+    private static final long serialVersionUID = -7977025569697122976L;
+
     public ValidacionExcepcion(String mensaje) {
         super(mensaje);
         //Penultima llamada en la pila

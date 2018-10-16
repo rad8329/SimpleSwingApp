@@ -12,7 +12,7 @@ import java.util.ArrayList;
 /**
  * @author rad8329
  */
-public class ZonaControlador implements ControladorInterface<Zona> {
+public class ZonaControlador implements ControladorInterface<Zona>, LanzadorInterface {
 
     private final ZonaArchivoRepositorio repositorio;
     private final ArrayList<Zona> zonas;
