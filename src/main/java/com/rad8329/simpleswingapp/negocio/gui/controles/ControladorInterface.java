@@ -8,7 +8,7 @@ import javax.swing.JPanel;
  * @author rad8329
  * @param <T>
  */
-public interface ControladorInterface<T, V> {
+public interface ControladorInterface<T> {
 
     public String getTitulo();
 

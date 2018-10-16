@@ -1,18 +1,18 @@
 package com.rad8329.simpleswingapp.negocio.gui.controles;
 
-import com.rad8329.simpleswingapp.negocio.repositorio.ZonaArchivoRepositorio;
-import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 import com.rad8329.simpleswingapp.negocio.entidad.Zona;
-import java.util.ArrayList;
+import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 import com.rad8329.simpleswingapp.negocio.gui.modelos.ZonaTablaModelo;
 import com.rad8329.simpleswingapp.negocio.gui.vistas.ZonaPanel;
+import com.rad8329.simpleswingapp.negocio.repositorio.ZonaArchivoRepositorio;
+import java.util.ArrayList;
 import javax.swing.JPanel;
 
 /**
  *
  * @author rad8329
  */
-public class ZonaControlador implements ControladorInterface<Zona, ZonaPanel> {
+public class ZonaControlador implements ControladorInterface<Zona> {
 
     private final ZonaArchivoRepositorio repositorio;
     private final ArrayList<Zona> zonas;

@@ -1,11 +1,11 @@
 package com.rad8329.simpleswingapp.negocio.gui.vistas;
 
 import com.rad8329.simpleswingapp.negocio.entidad.Zona;
+import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
+import com.rad8329.simpleswingapp.negocio.gui.controles.ZonaControlador;
+import com.rad8329.simpleswingapp.negocio.gui.modelos.ZonaTablaModelo;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
-import com.rad8329.simpleswingapp.negocio.gui.modelos.ZonaTablaModelo;
-import com.rad8329.simpleswingapp.negocio.gui.controles.ZonaControlador;
 
 public class ZonaPanel extends javax.swing.JPanel {
 

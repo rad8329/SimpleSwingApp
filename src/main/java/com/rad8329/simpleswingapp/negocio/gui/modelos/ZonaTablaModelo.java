@@ -1,8 +1,8 @@
 package com.rad8329.simpleswingapp.negocio.gui.modelos;
 
 import com.rad8329.simpleswingapp.negocio.entidad.Zona;
-import javax.swing.table.AbstractTableModel;
 import com.rad8329.simpleswingapp.negocio.gui.controles.ZonaControlador;
+import javax.swing.table.AbstractTableModel;
 
 /**
  *
