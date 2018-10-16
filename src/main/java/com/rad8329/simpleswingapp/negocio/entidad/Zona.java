@@ -1,6 +1,6 @@
-package main.java.uao.asiscontrol.negocio.entidad;
+package com.rad8329.simpleswingapp.negocio.entidad;
 
-import main.java.uao.asiscontrol.negocio.excepcion.ValidacionExcepcion;
+import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 
 public class Zona implements EntidadInterface {
 

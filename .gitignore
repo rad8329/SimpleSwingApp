@@ -1,7 +1,8 @@
-/build
+/nbactions.xml
+/build/
 *.txt
-/nbproject
-/ControlAsistencia/nbproject/private/
 /build.xml
 /manifest.mf
-/dist
+/dist/
+/target/
+/nbproject/

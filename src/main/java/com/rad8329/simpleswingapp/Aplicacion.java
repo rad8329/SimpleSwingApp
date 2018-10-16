@@ -1,11 +1,11 @@
-package main.java.uao.asiscontrol;
+package com.rad8329.simpleswingapp;
 
-import main.java.uao.asiscontrol.negocio.gui.vistas.MainFrame;
+import com.rad8329.simpleswingapp.negocio.gui.vistas.MainFrame;
 import javax.swing.UIManager;
-import main.java.uao.asiscontrol.negocio.gui.controles.ZonaControlador;
-import main.java.uao.asiscontrol.negocio.repositorio.ZonaArchivoRepositorio;
+import com.rad8329.simpleswingapp.negocio.gui.controles.ZonaControlador;
+import com.rad8329.simpleswingapp.negocio.repositorio.ZonaArchivoRepositorio;
 import java.util.ArrayList;
-import main.java.uao.asiscontrol.negocio.gui.controles.ControladorInterface;
+import com.rad8329.simpleswingapp.negocio.gui.controles.ControladorInterface;
 import javax.swing.JPanel;
 import java.util.logging.Logger;
 import java.util.logging.Level;

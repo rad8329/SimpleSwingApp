@@ -1,8 +1,8 @@
-package main.java.uao.asiscontrol.negocio.gui.modelos;
+package com.rad8329.simpleswingapp.negocio.gui.modelos;
 
-import main.java.uao.asiscontrol.negocio.entidad.Zona;
+import com.rad8329.simpleswingapp.negocio.entidad.Zona;
 import javax.swing.table.AbstractTableModel;
-import main.java.uao.asiscontrol.negocio.gui.controles.ZonaControlador;
+import com.rad8329.simpleswingapp.negocio.gui.controles.ZonaControlador;
 
 /**
  *

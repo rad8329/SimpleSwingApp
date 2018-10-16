@@ -1,4 +1,4 @@
-package main.java.uao.asiscontrol.negocio.repositorio;
+package com.rad8329.simpleswingapp.negocio.repositorio;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -7,7 +7,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import main.java.uao.asiscontrol.negocio.entidad.Zona;
+import java.util.logging.Logger;
+import com.rad8329.simpleswingapp.negocio.entidad.Zona;
 
 /**
  * El manejo de archivos hechos acá no es el mejor, pero es simplemente para
@@ -42,9 +43,10 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
 
                     try {
                         zonas.add(lineaCsvAZona(linea));
-                    } catch (ArrayIndexOutOfBoundsException | java.lang.NumberFormatException ex) {
+                    } catch (ArrayIndexOutOfBoundsException | 
+                            java.lang.NumberFormatException ex) {
 
-                        java.util.logging.Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
+                        Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                                 java.util.logging.Level.WARNING,
                                 String.format(
                                         "[%s]Error cargando la línea %d: %s",
@@ -56,13 +58,13 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
                     }
                 }
             } catch (IOException ex) {
-                java.util.logging.Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
+                Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                         java.util.logging.Level.SEVERE,
                         ex.getMessage()
                 );
             }
-
-            java.util.logging.Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
+            
+            Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                     java.util.logging.Level.INFO,
                     String.format(
                             "[%s]Las zonas fueron cargadas desde el archivo",
@@ -71,7 +73,7 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
             );
 
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
+            Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                     java.util.logging.Level.WARNING,
                     ex.getMessage()
             );
@@ -89,20 +91,20 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
                 buffer.append(zonaALineaCsv(modelo));
                 buffer.close();
             } catch (IOException ex) {
-                java.util.logging.Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
+                Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                         java.util.logging.Level.SEVERE,
                         ex.getMessage()
                 );
             }
 
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
+            Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                     java.util.logging.Level.SEVERE,
                     ex.getMessage()
             );
         }
 
-        java.util.logging.Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
+        Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                 java.util.logging.Level.INFO,
                 String.format(
                         "[%s]La zona fue guardada en el archivo",
@@ -137,7 +139,7 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
                     if (linea.trim().contains(lineaABuscar)) {
                         //Si la línea es igual, la cambiamos en el archivo temporal
                         if (contenidoNuevo.isEmpty()) {
-                            java.util.logging.Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
+                            Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                                     java.util.logging.Level.INFO,
                                     String.format(
                                             "[%s]La zona fue eliminada con éxito",
@@ -148,7 +150,7 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
                         } else {
                             writer.write(contenidoNuevo);
 
-                            java.util.logging.Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
+                            Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                                     java.util.logging.Level.INFO,
                                     String.format(
                                             "[%s]La zona fue actulizada con éxito",
@@ -166,7 +168,7 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
 
             archivoTemporal.renameTo(this.archivo);
         } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
+            Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                     java.util.logging.Level.SEVERE,
                     ex.getMessage()
             );

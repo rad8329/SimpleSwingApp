@@ -1,4 +1,4 @@
-package main.java.uao.asiscontrol.negocio.excepcion;
+package com.rad8329.simpleswingapp.negocio.excepcion;
 
 import java.util.logging.Logger;
 import java.util.logging.Level;

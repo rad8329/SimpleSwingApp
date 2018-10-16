@@ -1,11 +1,11 @@
-package main.java.uao.asiscontrol.negocio.gui.controles;
+package com.rad8329.simpleswingapp.negocio.gui.controles;
 
-import main.java.uao.asiscontrol.negocio.repositorio.ZonaArchivoRepositorio;
-import main.java.uao.asiscontrol.negocio.excepcion.ValidacionExcepcion;
-import main.java.uao.asiscontrol.negocio.entidad.Zona;
+import com.rad8329.simpleswingapp.negocio.repositorio.ZonaArchivoRepositorio;
+import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
+import com.rad8329.simpleswingapp.negocio.entidad.Zona;
 import java.util.ArrayList;
-import main.java.uao.asiscontrol.negocio.gui.modelos.ZonaTablaModelo;
-import main.java.uao.asiscontrol.negocio.gui.vistas.ZonaPanel;
+import com.rad8329.simpleswingapp.negocio.gui.modelos.ZonaTablaModelo;
+import com.rad8329.simpleswingapp.negocio.gui.vistas.ZonaPanel;
 import javax.swing.JPanel;
 
 /**

@@ -1,6 +1,6 @@
-package main.java.uao.asiscontrol.negocio.gui.controles;
+package com.rad8329.simpleswingapp.negocio.gui.controles;
 
-import main.java.uao.asiscontrol.negocio.excepcion.ValidacionExcepcion;
+import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 import javax.swing.JPanel;
 
 /**

@@ -1,6 +1,6 @@
-package main.java.uao.asiscontrol.negocio.gui.vistas;
+package com.rad8329.simpleswingapp.negocio.gui.vistas;
 
-import main.java.uao.asiscontrol.Aplicacion;
+import com.rad8329.simpleswingapp.Aplicacion;
 
 /**
  *
@@ -32,9 +32,9 @@ public class MainFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 236, 232));
         setResizable(false);
-
+        
         LabelEncabezado
-                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/recursos/imagenes/encabezado.png"))); // NOI18N
+               .setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/encabezado.png"))); // NOI18N
         LabelEncabezado.setFocusable(false);
 
         TabbedPanel.setBackground(new java.awt.Color(240, 236, 232));

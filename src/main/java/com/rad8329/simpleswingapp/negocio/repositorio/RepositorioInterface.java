@@ -1,4 +1,4 @@
-package main.java.uao.asiscontrol.negocio.repositorio;
+package com.rad8329.simpleswingapp.negocio.repositorio;
 
 import java.util.ArrayList;
 
