@@ -1,28 +1,28 @@
 package com.rad8329.simpleswingapp.negocio.gui.controles;
 
 import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
-import javax.swing.JPanel;
+
+import javax.swing.*;
 
 /**
- *
- * @author rad8329
  * @param <T>
+ * @author rad8329
  */
 public interface ControladorInterface<T> {
 
-    public String getTitulo();
+    String getTitulo();
 
-    public int contarRegistros();
+    int contarRegistros();
 
-    public void removerRegistro(int fila);
+    void removerRegistro(int fila);
 
-    public void agregarRegistro(T modelo, boolean guardar) throws ValidacionExcepcion;
+    void agregarRegistro(T modelo, boolean guardar) throws ValidacionExcepcion;
 
-    public void actualizarRegistro(int fila, T modelo) throws ValidacionExcepcion;
+    void actualizarRegistro(int fila, T modelo) throws ValidacionExcepcion;
 
-    public void cargarTodoLosRegistros();
+    void cargarTodoLosRegistros();
 
-    public T conseguirRegistro(int fila);
+    T conseguirRegistro(int fila);
 
-    public JPanel construirPanel();
+    JPanel construirPanel();
 }

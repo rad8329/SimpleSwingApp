@@ -5,11 +5,11 @@ import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 import com.rad8329.simpleswingapp.negocio.gui.modelos.ZonaTablaModelo;
 import com.rad8329.simpleswingapp.negocio.gui.vistas.ZonaPanel;
 import com.rad8329.simpleswingapp.negocio.repositorio.ZonaArchivoRepositorio;
+
+import javax.swing.*;
 import java.util.ArrayList;
-import javax.swing.JPanel;
 
 /**
- *
  * @author rad8329
  */
 public class ZonaControlador implements ControladorInterface<Zona> {
@@ -74,9 +74,7 @@ public class ZonaControlador implements ControladorInterface<Zona> {
     @Override
     public void cargarTodoLosRegistros() {
 
-        repositorio.consultarTodo().forEach((zona) -> {
-            zonas.add(zona);
-        });
+        zonas.addAll(repositorio.consultarTodo());
     }
 
     @Override

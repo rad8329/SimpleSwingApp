@@ -11,10 +11,10 @@ public class Zona implements EntidadInterface {
     private String direccion_ip_cerradura;
 
     public Zona(int codigo_zona,
-            String nombre,
-            String descripcion,
-            boolean control_de_acceso,
-            String direccion_ip_cerradura
+                String nombre,
+                String descripcion,
+                boolean control_de_acceso,
+                String direccion_ip_cerradura
     ) {
         this.codigo_zona = codigo_zona;
         this.nombre = nombre;

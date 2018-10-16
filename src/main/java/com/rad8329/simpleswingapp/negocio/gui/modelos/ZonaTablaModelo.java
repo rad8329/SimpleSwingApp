@@ -2,13 +2,15 @@ package com.rad8329.simpleswingapp.negocio.gui.modelos;
 
 import com.rad8329.simpleswingapp.negocio.entidad.Zona;
 import com.rad8329.simpleswingapp.negocio.gui.controles.ZonaControlador;
+
 import javax.swing.table.AbstractTableModel;
 
 /**
- *
- * @author rdiaz
+ * @author rad8329
  */
 public class ZonaTablaModelo extends AbstractTableModel {
+
+    private static final long serialVersionUID = 218325224171167746L;
 
     private final ZonaControlador controlador;
 
@@ -17,21 +19,21 @@ public class ZonaTablaModelo extends AbstractTableModel {
     }
 
     private final String[] columnas = {
-        "#",
-        "Código",
-        "Nombre",
-        "Descripción",
-        "CA",
-        "IP CA"
+            "#",
+            "Código",
+            "Nombre",
+            "Descripción",
+            "CA",
+            "IP CA"
     };
 
-    final Class[] clasesColumnas = {
-        Integer.class,
-        String.class,
-        String.class,
-        String.class,
-        Boolean.class,
-        String.class
+    private final Class[] clasesColumnas = {
+            Integer.class,
+            String.class,
+            String.class,
+            String.class,
+            Boolean.class,
+            String.class
     };
 
     @Override
@@ -58,26 +60,22 @@ public class ZonaTablaModelo extends AbstractTableModel {
     public Object getValueAt(int fila, int columna) {
         Zona zona = controlador.conseguirRegistro(fila);
 
-        if (zona instanceof Zona) {
-            switch (columna) {
-                case 0:
-                    return fila + 1;
-                case 1:
-                    return zona.getCodigo_zona();
-                case 2:
-                    return zona.getNombre();
-                case 3:
-                    return zona.getDescripcion();
+        switch (columna) {
+            case 0:
+                return fila + 1;
+            case 1:
+                return zona.getCodigo_zona();
+            case 2:
+                return zona.getNombre();
+            case 3:
+                return zona.getDescripcion();
 
-                case 4:
-                    return zona.tieneControl_de_acceso();
-                case 5:
-                    return zona.getDireccion_ip_cerradura();
-                default:
-                    return null;
-            }
+            case 4:
+                return zona.tieneControl_de_acceso();
+            case 5:
+                return zona.getDireccion_ip_cerradura();
+            default:
+                return null;
         }
-
-        return null;
     }
 }

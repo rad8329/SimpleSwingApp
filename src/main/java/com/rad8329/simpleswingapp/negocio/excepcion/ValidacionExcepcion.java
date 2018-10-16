@@ -1,10 +1,9 @@
 package com.rad8329.simpleswingapp.negocio.excepcion;
 
-import java.util.logging.Logger;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
- *
  * @author rad8329
  */
 public class ValidacionExcepcion extends Exception {
@@ -18,9 +17,9 @@ public class ValidacionExcepcion extends Exception {
                 Level.WARNING,
                 "{0} {1} {2}",
                 new Object[]{
-                    mensaje,
-                    lastStackTrace.getClassName(),
-                    lastStackTrace.getMethodName()
+                        mensaje,
+                        lastStackTrace.getClassName(),
+                        lastStackTrace.getMethodName()
                 }
         );
     }

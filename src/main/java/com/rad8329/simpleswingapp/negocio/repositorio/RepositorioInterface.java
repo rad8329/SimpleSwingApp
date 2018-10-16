@@ -3,17 +3,16 @@ package com.rad8329.simpleswingapp.negocio.repositorio;
 import java.util.ArrayList;
 
 /**
- *
- * @author rad8329
  * @param <T>
+ * @author rad8329
  */
-public interface RepositorioInterface<T> {
-    
-    public boolean insertar(T modelo);
+interface RepositorioInterface<T> {
 
-    public boolean actualizar(T anterior, T nuevo);
+    boolean insertar(T modelo);
 
-    public boolean eliminar(T modelo);
+    boolean actualizar(T anterior, T nuevo);
 
-    public ArrayList<T> consultarTodo();
+    boolean eliminar(T modelo);
+
+    ArrayList<T> consultarTodo();
 }

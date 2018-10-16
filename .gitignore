@@ -1,8 +1,15 @@
 /nbactions.xml
 /build/
-*.txt
+/*.txt
 /build.xml
 /manifest.mf
 /dist/
 /target/
 /nbproject/
+/.settings/
+/.vscode/
+/.project
+/.classpath
+/.idea
+/SimpleSwingApp.iml
+/nb-configuration.xml

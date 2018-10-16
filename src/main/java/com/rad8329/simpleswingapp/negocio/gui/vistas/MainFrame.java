@@ -3,17 +3,17 @@ package com.rad8329.simpleswingapp.negocio.gui.vistas;
 import com.rad8329.simpleswingapp.Aplicacion;
 
 /**
- *
  * @author rad8329
  */
 public class MainFrame extends javax.swing.JFrame {
 
+    private static final long serialVersionUID = 9133921861428284014L;
     private final Aplicacion aplicacion;
 
     /**
      * Creates new form PrincipalFrame
-     * 
-     * @param aplicacion
+     *
+     * @param aplicacion Aplicación principal
      */
     public MainFrame(Aplicacion aplicacion) {
         this.aplicacion = aplicacion;
@@ -32,9 +32,9 @@ public class MainFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(240, 236, 232));
         setResizable(false);
-        
+
         LabelEncabezado
-               .setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/encabezado.png"))); // NOI18N
+                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/encabezado.png"))); // NOI18N
         LabelEncabezado.setFocusable(false);
 
         TabbedPanel.setBackground(new java.awt.Color(240, 236, 232));
@@ -44,7 +44,7 @@ public class MainFrame extends javax.swing.JFrame {
         TabbedPanel.setFocusable(false);
         TabbedPanel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         TabbedPanel.setName("panelTabs"); // NOI18N
-        
+
         aplicacion.getPaneles().forEach((panel) -> {
             TabbedPanel.add(panel.getName(), panel);
         });
@@ -73,6 +73,6 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelEncabezado;
-    public static javax.swing.JTabbedPane TabbedPanel;
+    private static javax.swing.JTabbedPane TabbedPanel;
     // End of variables declaration//GEN-END:variables
 }
