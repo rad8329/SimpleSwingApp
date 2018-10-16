@@ -5,7 +5,7 @@ import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 import javax.swing.*;
 
 /**
- * @param <T>
+ * @param <T> Una instancia de controlodor
  * @author rad8329
  */
 public interface ControladorInterface<T> {

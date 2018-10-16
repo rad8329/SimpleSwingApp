@@ -41,10 +41,10 @@ public class ZonaControlador implements ControladorInterface<Zona> {
         modelo.validar();
         zonas.add(modelo);
 
-        vista.getModelo().fireTableRowsInserted(zonas.size() - 1, zonas.size() - 1);
-
         if (guardar) {
-            repositorio.insertar(modelo);
+            if(repositorio.insertar(modelo)){
+                vista.getModelo().fireTableRowsInserted(zonas.size() - 1, zonas.size() - 1);
+            }
         }
     }
 

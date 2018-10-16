@@ -24,7 +24,7 @@ public class Aplicacion {
     }
 
     private void cargarTodoLosRegistros() {
-        controladores.forEach(ControladorInterface::cargarTodoLosRegistros);
+        controladores.forEach((controlador) -> controlador.cargarTodoLosRegistros());
     }
 
     public ArrayList<JPanel> getPaneles() {
