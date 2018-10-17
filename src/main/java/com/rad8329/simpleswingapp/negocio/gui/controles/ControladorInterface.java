@@ -12,11 +12,11 @@ interface ControladorInterface<T> {
 
     int contarRegistros();
 
-    void removerRegistro(int fila);
+    boolean removerRegistro(int fila);
 
-    void agregarRegistro(T modelo, boolean guardar) throws ValidacionExcepcion;
+    boolean agregarRegistro(T modelo) throws ValidacionExcepcion;
 
-    void actualizarRegistro(int fila, T modelo) throws ValidacionExcepcion;
+    boolean actualizarRegistro(int fila, T modelo) throws ValidacionExcepcion;
     
     T conseguirRegistro(int fila);
 }

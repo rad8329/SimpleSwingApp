@@ -14,7 +14,7 @@ public class ZonaPanel extends javax.swing.JPanel {
     private final ZonaControlador control;
 
     /**
-     * @param modelo  Un modelo extendido de AbstractTableModel
+     * @param modelo Un modelo extendido de AbstractTableModel
      * @param control Una implementación de ControladorInterface
      */
     public ZonaPanel(ZonaTablaModelo modelo, ZonaControlador control) {
@@ -246,9 +246,7 @@ public class ZonaPanel extends javax.swing.JPanel {
 
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_BotonGuardarActionPerformed
 
-        boolean errores = false;
-
-        String mensaje = "La zona fue agregada con éxito";
+        String mensaje;
 
         try {
             int codigo;
@@ -260,25 +258,35 @@ public class ZonaPanel extends javax.swing.JPanel {
                 throw new ValidacionExcepcion("Código debe ser númerico y no vacío");
             }
 
-            Zona zona = new Zona(codigo, TextFieldNombre.getText(), TextAreaDescripcion.getText(),
-                    CheckBoxControlAcceso.isSelected(), TextFieldDireccionIP.getText());
+            Zona zona = new Zona(
+                    codigo,
+                    TextFieldNombre.getText(),
+                    TextAreaDescripcion.getText(),
+                    CheckBoxControlAcceso.isSelected(),
+                    TextFieldDireccionIP.getText()
+            );
 
             if (!LabelID.getText().isEmpty()) {
-                control.actualizarRegistro(Integer.parseInt(LabelID.getText()), zona);
-                mensaje = "La zona fue actualizado con éxito";
+                if (control.actualizarRegistro(Integer.parseInt(LabelID.getText()), zona)) {
+                    mensaje = "La zona fue actualizado con éxito";
+                    limpiar();
+                } else {
+                    mensaje = "Ocurrió un problema al intentar actualizar la zona";
+
+                }
             } else {
-                control.agregarRegistro(zona, true);
+                if (control.agregarRegistro(zona)) {
+                    mensaje = "La zona fue agregada con éxito";
+                    limpiar();
+                } else {
+                    mensaje = "Ocurrió un problema al intentar agregar la zona";
+                }
             }
 
-        } catch (ValidacionExcepcion ex) {
-            errores = true;
-            JOptionPane.showMessageDialog(this, ex.getMessage());
-        }
-
-        if (!errores) {
-            limpiar();
-
             JOptionPane.showMessageDialog(this, mensaje);
+
+        } catch (ValidacionExcepcion ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }// GEN-LAST:event_BotonGuardarActionPerformed
 
@@ -305,12 +313,17 @@ public class ZonaPanel extends javax.swing.JPanel {
 
         if (!LabelID.getText().isEmpty()) {
             int fila = Integer.parseInt(LabelID.getText());
+            String mensaje;
 
-            control.removerRegistro(fila);
+            if (control.removerRegistro(fila)) {
+                limpiar();
 
-            limpiar();
+                mensaje = "La zona fue eliminada con éxito";
+            } else {
+                mensaje = "Ocurrió un problema al intentar eliminar la zona";
+            }
 
-            JOptionPane.showMessageDialog(this, "La zona fue eliminada con éxito");
+            JOptionPane.showMessageDialog(this, mensaje);
         }
     }// GEN-LAST:event_BotonBorrarActionPerformed
 

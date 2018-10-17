@@ -5,7 +5,7 @@ import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 import com.rad8329.simpleswingapp.negocio.gui.modelos.ZonaTablaModelo;
 import com.rad8329.simpleswingapp.negocio.gui.vistas.ZonaPanel;
 import com.rad8329.simpleswingapp.negocio.repositorio.RepositorioInterface;
-        
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -26,30 +26,36 @@ public class ZonaControlador implements ControladorInterface<Zona>, LanzadorInte
     }
 
     @Override
-    public void removerRegistro(int fila) {
+    public boolean removerRegistro(int fila) {
         Zona zona = zonas.get(fila);
 
         if (repositorio.eliminar(zona)) {
             zonas.remove(fila);
 
             vista.getModelo().fireTableRowsDeleted(fila, fila);
+            
+            return true;
         }
+        
+        return false;
     }
 
     @Override
-    public void agregarRegistro(Zona modelo, boolean guardar) throws ValidacionExcepcion {
+    public boolean agregarRegistro(Zona modelo) throws ValidacionExcepcion {
         modelo.validar();
         zonas.add(modelo);
 
-        if (guardar) {
-            if(repositorio.insertar(modelo)){
-                vista.getModelo().fireTableRowsInserted(zonas.size() - 1, zonas.size() - 1);
-            }
+        if (repositorio.insertar(modelo)) {
+            vista.getModelo().fireTableRowsInserted(zonas.size() - 1, zonas.size() - 1);
+            
+            return true;
         }
+        
+        return false;
     }
 
     @Override
-    public void actualizarRegistro(int fila, Zona modelo) throws ValidacionExcepcion {
+    public boolean actualizarRegistro(int fila, Zona modelo) throws ValidacionExcepcion {
         modelo.validar();
 
         Zona zonaActual = conseguirRegistro(fila);
@@ -63,7 +69,10 @@ public class ZonaControlador implements ControladorInterface<Zona>, LanzadorInte
             zonaActual.setDireccion_ip_cerradura(modelo.getDireccion_ip_cerradura());
 
             vista.getModelo().fireTableRowsUpdated(fila, fila);
+            return true;            
         }
+        
+        return false;
     }
 
     @Override
