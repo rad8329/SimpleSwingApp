@@ -4,8 +4,8 @@ import com.rad8329.simpleswingapp.negocio.entidad.Zona;
 import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 import com.rad8329.simpleswingapp.negocio.gui.modelos.ZonaTablaModelo;
 import com.rad8329.simpleswingapp.negocio.gui.vistas.ZonaPanel;
-import com.rad8329.simpleswingapp.negocio.repositorio.ZonaArchivoRepositorio;
-
+import com.rad8329.simpleswingapp.negocio.repositorio.RepositorioInterface;
+        
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -14,12 +14,12 @@ import java.util.ArrayList;
  */
 public class ZonaControlador implements ControladorInterface<Zona>, LanzadorInterface {
 
-    private final ZonaArchivoRepositorio repositorio;
+    private final RepositorioInterface<Zona> repositorio;
     private final ArrayList<Zona> zonas;
     private ZonaPanel vista;
     private final String titulo;
 
-    public ZonaControlador(String titulo, ZonaArchivoRepositorio repositorio) {
+    public ZonaControlador(String titulo, RepositorioInterface<Zona> repositorio) {
         this.titulo = titulo;
         this.repositorio = repositorio;
         this.zonas = new ArrayList<>();

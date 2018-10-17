@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @param <T>
  * @author rad8329
  */
-interface RepositorioInterface<T> {
+public interface RepositorioInterface<T> {
 
     boolean insertar(T modelo);
 
