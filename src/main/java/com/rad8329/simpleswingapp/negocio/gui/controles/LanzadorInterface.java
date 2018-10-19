@@ -1,6 +1,6 @@
 package com.rad8329.simpleswingapp.negocio.gui.controles;
 
-import javax.swing.*;
+import javax.swing.JPanel;
 
 /**
  * @author rad8329

@@ -5,7 +5,8 @@ import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 import com.rad8329.simpleswingapp.negocio.gui.controles.ZonaControlador;
 import com.rad8329.simpleswingapp.negocio.gui.modelos.ZonaTablaModelo;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 public class ZonaPanel extends javax.swing.JPanel {
 
@@ -134,88 +135,88 @@ public class ZonaPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout PanelFormularioLayout = new javax.swing.GroupLayout(PanelFormulario);
         PanelFormulario.setLayout(PanelFormularioLayout);
         PanelFormularioLayout.setHorizontalGroup(
-                PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PanelFormularioLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(ScrollPanelTabla)
-                                .addGap(10, 10, 10))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createSequentialGroup()
-                                .addContainerGap()
+            PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelFormularioLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(ScrollPanelTabla)
+                .addGap(10, 10, 10))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createSequentialGroup()
+                        .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(PanelFormularioLayout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(LabelDescripcion)
+                                .addGap(18, 18, 18)
+                                .addComponent(ScrollPanelDescripcion))
+                            .addGroup(PanelFormularioLayout.createSequentialGroup()
+                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(LabelCodigo)
+                                    .addComponent(LabelControlAcceso))
+                                .addGap(18, 18, 18)
                                 .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createSequentialGroup()
-                                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addGroup(PanelFormularioLayout.createSequentialGroup()
-                                                                .addGap(41, 41, 41)
-                                                                .addComponent(LabelDescripcion)
-                                                                .addGap(18, 18, 18)
-                                                                .addComponent(ScrollPanelDescripcion))
-                                                        .addGroup(PanelFormularioLayout.createSequentialGroup()
-                                                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                        .addComponent(LabelCodigo)
-                                                                        .addComponent(LabelControlAcceso))
-                                                                .addGap(18, 18, 18)
-                                                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addGroup(PanelFormularioLayout.createSequentialGroup()
-                                                                                .addComponent(CheckBoxControlAcceso)
-                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                                                                                .addComponent(LabelDireccionIP))
-                                                                        .addComponent(TextFieldCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                                .addGap(30, 30, 30)
-                                                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                                        .addGroup(PanelFormularioLayout.createSequentialGroup()
-                                                                                .addComponent(LabelNombre)
-                                                                                .addGap(46, 46, 46)
-                                                                                .addComponent(TextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                        .addComponent(TextFieldDireccionIP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                                .addGap(36, 36, 36)
-                                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(BotonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(BotonGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createSequentialGroup()
-                                                                .addComponent(LabelID)
-                                                                .addGap(59, 59, 59))))
-                                        .addComponent(BotonBorrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap())
+                                    .addGroup(PanelFormularioLayout.createSequentialGroup()
+                                        .addComponent(CheckBoxControlAcceso)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                        .addComponent(LabelDireccionIP))
+                                    .addComponent(TextFieldCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(30, 30, 30)
+                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(PanelFormularioLayout.createSequentialGroup()
+                                        .addComponent(LabelNombre)
+                                        .addGap(46, 46, 46)
+                                        .addComponent(TextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(TextFieldDireccionIP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(36, 36, 36)
+                        .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BotonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createSequentialGroup()
+                                .addComponent(LabelID)
+                                .addGap(59, 59, 59))))
+                    .addComponent(BotonBorrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         PanelFormularioLayout.setVerticalGroup(
-                PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PanelFormularioLayout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(BotonGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(TextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(LabelNombre))
-                                        .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(LabelCodigo)
-                                                .addComponent(TextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(PanelFormularioLayout.createSequentialGroup()
-                                                .addGap(14, 14, 14)
-                                                .addComponent(BotonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(LabelID)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(PanelFormularioLayout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(CheckBoxControlAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createSequentialGroup()
-                                                                        .addComponent(LabelControlAcceso)
-                                                                        .addGap(12, 12, 12)))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                .addComponent(TextFieldDireccionIP, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(LabelDireccionIP)))
-                                                .addGap(31, 31, 31)
-                                                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(LabelDescripcion)
-                                                        .addComponent(ScrollPanelDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(26, 26, 26)))
-                                .addComponent(ScrollPanelTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15)
-                                .addComponent(BotonBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(15, 15, 15))
+            PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelFormularioLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BotonGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelNombre))
+                    .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(LabelCodigo)
+                        .addComponent(TextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelFormularioLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(BotonLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelID)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(PanelFormularioLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(CheckBoxControlAcceso, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createSequentialGroup()
+                                    .addComponent(LabelControlAcceso)
+                                    .addGap(12, 12, 12)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(TextFieldDireccionIP, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelDireccionIP)))
+                        .addGap(31, 31, 31)
+                        .addGroup(PanelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelDescripcion)
+                            .addComponent(ScrollPanelDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)))
+                .addComponent(ScrollPanelTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(BotonBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
 
         LabelID.setVisible(false);
@@ -223,43 +224,38 @@ public class ZonaPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, 0)
-                                .addComponent(PanelFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(PanelFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, 0)
-                                .addComponent(PanelFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(PanelFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void limpiar() {
+        //Limpiamos todos los campos
         TextFieldCodigo.setText("");
         TextFieldNombre.setText("");
         TextAreaDescripcion.setText("");
         TextFieldDireccionIP.setText("");
         CheckBoxControlAcceso.setSelected(false);
+        //Limpiamos nuestra label "mágica"
+        LabelID.setText("");
+        modelo.fireTableDataChanged();
     }
 
-    private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_BotonGuardarActionPerformed
+    private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
 
         String mensaje;
 
-        try {
-            int codigo;
-
-            try {
-                codigo = Integer.parseInt(TextFieldCodigo.getText());
-            } catch (NumberFormatException ex) {
-
-                throw new ValidacionExcepcion("Código debe ser númerico y no vacío");
-            }
-
-            Zona zona = new Zona(
-                    codigo,
+        try {            
+            Zona zona = new Zona(                    
+                    Utilidades.capturarEntero(TextFieldCodigo, "Código").get(),
                     TextFieldNombre.getText(),
                     TextAreaDescripcion.getText(),
                     CheckBoxControlAcceso.isSelected(),
@@ -288,28 +284,28 @@ public class ZonaPanel extends javax.swing.JPanel {
         } catch (ValidacionExcepcion ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
-    }// GEN-LAST:event_BotonGuardarActionPerformed
+    }//GEN-LAST:event_BotonGuardarActionPerformed
 
-    private void BotonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_BotonLimpiarActionPerformed
+    private void BotonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLimpiarActionPerformed
         limpiar();
-    }// GEN-LAST:event_BotonLimpiarActionPerformed
+    }//GEN-LAST:event_BotonLimpiarActionPerformed
 
-    private void TablezonasMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_TablezonasMouseClicked
+    private void TablezonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablezonasMouseClicked
         JTable source = (JTable) evt.getSource();
         int fila = source.rowAtPoint(evt.getPoint());
 
         Zona zona = control.conseguirRegistro(fila);
 
-        TextFieldCodigo.setText(Integer.toString(zona.getCodigo_zona()));
+        TextFieldCodigo.setText(Integer.toString(zona.getCodigoZona()));
         TextFieldNombre.setText(zona.getNombre());
         TextAreaDescripcion.setText(zona.getDescripcion());
-        TextFieldDireccionIP.setText(zona.getDireccion_ip_cerradura());
-        CheckBoxControlAcceso.setSelected(zona.tieneControl_de_acceso());
+        TextFieldDireccionIP.setText(zona.getDireccionIpCerradura());
+        CheckBoxControlAcceso.setSelected(zona.tieneControlDeAcceso());
 
         LabelID.setText(Integer.toString(fila));// Para saber si debemos actualizarRegistro
-    }// GEN-LAST:event_TablezonasMouseClicked
+    }//GEN-LAST:event_TablezonasMouseClicked
 
-    private void BotonBorrarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_BotonBorrarActionPerformed
+    private void BotonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBorrarActionPerformed
 
         if (!LabelID.getText().isEmpty()) {
             int fila = Integer.parseInt(LabelID.getText());
@@ -325,7 +321,7 @@ public class ZonaPanel extends javax.swing.JPanel {
 
             JOptionPane.showMessageDialog(this, mensaje);
         }
-    }// GEN-LAST:event_BotonBorrarActionPerformed
+    }//GEN-LAST:event_BotonBorrarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonBorrar;

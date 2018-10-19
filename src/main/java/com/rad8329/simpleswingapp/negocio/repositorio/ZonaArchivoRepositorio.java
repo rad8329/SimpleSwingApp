@@ -92,7 +92,6 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
                         ex.getMessage()
                 );
             }
-
         } catch (IOException ex) {
             Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                     Level.SEVERE,
@@ -195,14 +194,12 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
     private String zonaALineaCsv(Zona zona) {
         return String.format(
                 "%d;%s;%s;%s;%s",
-                zona.getCodigo_zona(),
+                zona.getCodigoZona(),
                 //Quitamos el ; que nos puede hacer fallar
-                zona.getNombre().replace(";", ""),
-                //Quitamos el ; que nos puede hacer fallar
+                zona.getNombre().replace(";", ""),                
                 zona.getDescripcion().replace(";", ""),
-                Boolean.toString(zona.tieneControl_de_acceso()),
-                //Quitamos el ; que nos puede hacer fallar
-                zona.getDireccion_ip_cerradura().replace(";", "")
+                Boolean.toString(zona.tieneControlDeAcceso()),                
+                zona.getDireccionIpCerradura().replace(";", "")
         ) + System.getProperty("line.separator");
     }
 

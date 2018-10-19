@@ -5,7 +5,8 @@ import com.rad8329.simpleswingapp.negocio.gui.controles.ZonaControlador;
 import com.rad8329.simpleswingapp.negocio.gui.vistas.MainFrame;
 import com.rad8329.simpleswingapp.negocio.repositorio.ZonaArchivoRepositorio;
 
-import javax.swing.*;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;

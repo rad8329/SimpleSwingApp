@@ -24,12 +24,12 @@ public class ZonaTablaModelo extends AbstractTableModel {
             "Nombre",
             "Descripción",
             "CA",
-            "IP CA"
+            "Dirección IP"
     };
 
     private final Class[] clasesColumnas = {
             Integer.class,
-            String.class,
+            Integer.class,
             String.class,
             String.class,
             Boolean.class,
@@ -64,16 +64,16 @@ public class ZonaTablaModelo extends AbstractTableModel {
             case 0:
                 return fila + 1;
             case 1:
-                return zona.getCodigo_zona();
+                return zona.getCodigoZona();
             case 2:
                 return zona.getNombre();
             case 3:
                 return zona.getDescripcion();
 
             case 4:
-                return zona.tieneControl_de_acceso();
+                return zona.tieneControlDeAcceso();
             case 5:
-                return zona.getDireccion_ip_cerradura();
+                return zona.getDireccionIpCerradura();
             default:
                 return null;
         }

@@ -6,7 +6,7 @@ import com.rad8329.simpleswingapp.negocio.gui.modelos.ZonaTablaModelo;
 import com.rad8329.simpleswingapp.negocio.gui.vistas.ZonaPanel;
 import com.rad8329.simpleswingapp.negocio.repositorio.RepositorioInterface;
 
-import javax.swing.*;
+import javax.swing.JPanel;
 import java.util.ArrayList;
 
 /**
@@ -15,22 +15,22 @@ import java.util.ArrayList;
 public class ZonaControlador implements ControladorInterface<Zona>, LanzadorInterface {
 
     private final RepositorioInterface<Zona> repositorio;
-    private final ArrayList<Zona> zonas;
+    private final ArrayList<Zona> registros;
     private ZonaPanel vista;
     private final String titulo;
 
     public ZonaControlador(String titulo, RepositorioInterface<Zona> repositorio) {
         this.titulo = titulo;
         this.repositorio = repositorio;
-        this.zonas = new ArrayList<>();
+        this.registros = new ArrayList<>();
     }
 
     @Override
     public boolean removerRegistro(int fila) {
-        Zona zona = zonas.get(fila);
+        Zona zona = registros.get(fila);
 
         if (repositorio.eliminar(zona)) {
-            zonas.remove(fila);
+            registros.remove(fila);
 
             vista.getModelo().fireTableRowsDeleted(fila, fila);
             
@@ -43,10 +43,10 @@ public class ZonaControlador implements ControladorInterface<Zona>, LanzadorInte
     @Override
     public boolean agregarRegistro(Zona modelo) throws ValidacionExcepcion {
         modelo.validar();
-        zonas.add(modelo);
+        registros.add(modelo);
 
         if (repositorio.insertar(modelo)) {
-            vista.getModelo().fireTableRowsInserted(zonas.size() - 1, zonas.size() - 1);
+            vista.getModelo().fireTableRowsInserted(registros.size() - 1, registros.size() - 1);
             
             return true;
         }
@@ -62,13 +62,14 @@ public class ZonaControlador implements ControladorInterface<Zona>, LanzadorInte
 
         if (repositorio.actualizar(zonaActual, modelo)) {
             //Actualizamos las propiedades
-            zonaActual.setCodigo_zona(modelo.getCodigo_zona());
+            zonaActual.setCodigoZona(modelo.getCodigoZona());
             zonaActual.setNombre(modelo.getNombre());
             zonaActual.setDescripcion(modelo.getDescripcion());
-            zonaActual.setControl_de_acceso(modelo.tieneControl_de_acceso());
-            zonaActual.setDireccion_ip_cerradura(modelo.getDireccion_ip_cerradura());
+            zonaActual.setControlDeAcceso(modelo.tieneControlDeAcceso());
+            zonaActual.setDireccionIpCerradura(modelo.getDireccionIpCerradura());
 
             vista.getModelo().fireTableRowsUpdated(fila, fila);
+            
             return true;            
         }
         
@@ -77,18 +78,18 @@ public class ZonaControlador implements ControladorInterface<Zona>, LanzadorInte
 
     @Override
     public Zona conseguirRegistro(int fila) {
-        return zonas.get(fila);
+        return registros.get(fila);
     }
 
     @Override
     public void cargarTodoLosRegistros() {
 
-        zonas.addAll(repositorio.consultarTodo());
+        registros.addAll(repositorio.consultarTodo());
     }
 
     @Override
     public int contarRegistros() {
-        return zonas.size();
+        return registros.size();
     }
 
     @Override
