@@ -2,7 +2,13 @@ package com.rad8329.simpleswingapp.negocio.repositorio;
 
 import com.rad8329.simpleswingapp.negocio.entidad.Zona;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedWriter;
+import java.io.BufferedReader;
+
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,8 +46,8 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
 
                     try {
                         zonas.add(lineaCsvAZona(linea));
-                    } catch (ArrayIndexOutOfBoundsException |
-                            java.lang.NumberFormatException ex) {
+                    } catch (ArrayIndexOutOfBoundsException
+                            | java.lang.NumberFormatException ex) {
 
                         Logger.getLogger(ZonaArchivoRepositorio.class.getName()).log(
                                 Level.WARNING,
@@ -113,7 +119,7 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
     /**
      * Si se quiere eliminar la línea, se pasa el parametro contenidoNuevo vacío
      *
-     * @param lineaABuscar   Linea en formato csv
+     * @param lineaABuscar Linea en formato csv
      * @param contenidoNuevo Linea en formato csv
      * @return true = pudo guardar, false = no pudo guardar
      */
@@ -125,7 +131,7 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
             FileWriter manejadorEscritura = new FileWriter(archivoTemporal);
 
             try (BufferedReader buffer = new BufferedReader(manejadorLectura);
-                 BufferedWriter writer = new BufferedWriter(manejadorEscritura)) {
+                    BufferedWriter writer = new BufferedWriter(manejadorEscritura)) {
 
                 String linea;
 
@@ -191,14 +197,14 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
      * @param zona Un objeto de tipo Zona
      * @return Una línea en formato CSV
      */
-    private String zonaALineaCsv(Zona zona) {
+    public static String zonaALineaCsv(Zona zona) {
         return String.format(
                 "%d;%s;%s;%s;%s",
                 zona.getCodigoZona(),
                 //Quitamos el ; que nos puede hacer fallar
-                zona.getNombre().replace(";", ""),                
+                zona.getNombre().replace(";", ""),
                 zona.getDescripcion().replace(";", ""),
-                Boolean.toString(zona.tieneControlDeAcceso()),                
+                Boolean.toString(zona.tieneControlDeAcceso()),
                 zona.getDireccionIpCerradura().replace(";", "")
         ) + System.getProperty("line.separator");
     }
@@ -209,7 +215,7 @@ public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
      * @param linea Una línea en formato CSV
      * @return Un objeto de tipo Zona
      */
-    private Zona lineaCsvAZona(String linea) {
+    public static Zona lineaCsvAZona(String linea) {
         String[] datos = linea.split(";", -1);
 
         return new Zona(
