@@ -3,7 +3,7 @@ package com.rad8329.simpleswingapp.negocio.gui.controles;
 import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 
 /**
- * @param <T> Una instancia de controlodor
+ * @param <T> Una implementación de controlador
  * @author rad8329
  */
 interface ControladorInterface<T> {

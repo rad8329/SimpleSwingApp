@@ -3,8 +3,7 @@ package com.rad8329.simpleswingapp.negocio.repositorio;
 import java.util.ArrayList;
 
 /**
- * @param <T>
- * @author rad8329
+ * @param <T> Una implementación de repositorio
  */
 public interface RepositorioInterface<T> {
 

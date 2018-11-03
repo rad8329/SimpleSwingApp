@@ -9,9 +9,6 @@ import com.rad8329.simpleswingapp.negocio.repositorio.RepositorioInterface;
 import javax.swing.JPanel;
 import java.util.ArrayList;
 
-/**
- * @author rad8329
- */
 public class ZonaControlador implements ControladorInterface<Zona>, LanzadorInterface {
 
     private final RepositorioInterface<Zona> repositorio;

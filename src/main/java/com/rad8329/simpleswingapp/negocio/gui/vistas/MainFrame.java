@@ -2,9 +2,6 @@ package com.rad8329.simpleswingapp.negocio.gui.vistas;
 
 import com.rad8329.simpleswingapp.Aplicacion;
 
-/**
- * @author rad8329
- */
 public class MainFrame extends javax.swing.JFrame {
 
     private static final long serialVersionUID = 9133921861428284014L;

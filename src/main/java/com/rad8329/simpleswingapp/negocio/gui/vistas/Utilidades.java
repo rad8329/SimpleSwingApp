@@ -4,10 +4,6 @@ import com.rad8329.simpleswingapp.negocio.excepcion.ValidacionExcepcion;
 import java.util.Optional;
 import javax.swing.JTextField;
 
-/**
- *
- * @author rad8329
- */
 public class Utilidades {
 
     public static java.util.Optional<Integer> capturarEntero(JTextField campo, String label) throws ValidacionExcepcion {

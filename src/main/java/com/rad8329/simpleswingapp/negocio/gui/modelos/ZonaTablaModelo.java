@@ -5,9 +5,6 @@ import com.rad8329.simpleswingapp.negocio.gui.controles.ZonaControlador;
 
 import javax.swing.table.AbstractTableModel;
 
-/**
- * @author rad8329
- */
 public class ZonaTablaModelo extends AbstractTableModel {
 
     private static final long serialVersionUID = 218325224171167746L;

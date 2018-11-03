@@ -16,8 +16,6 @@ import java.util.logging.Logger;
 /**
  * El manejo de archivos hechos acá no es el mejor, pero es simplemente para
  * hacer el primer ejemplo de repositorio
- *
- * @author rad8329
  */
 public class ZonaArchivoRepositorio implements RepositorioInterface<Zona> {
 
