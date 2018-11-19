@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>603</y>
+      <w>216</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>**Persona**
+--
+&lt;&lt;pk&gt;&gt; codigo : numerico
+nombres : texto
+apellidos : texto
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>675</x>
+      <y>396</y>
+      <w>234</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>**Evento**
+--
+&lt;&lt;pk&gt;&gt; consecutivo : numerico
+nombre : texto
+descripcion : texto</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>261</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>**Programacion**
+--
+&lt;&lt;pk&gt;&gt; consecutivo : numerico
+fecha_inicio : fechahora
+fecha_fin : fechahora
+codigo_zona: numerico
+actividades: texto [0..1]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>549</y>
+      <w>216</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>**Zona**
+--
+&lt;&lt;pk&gt;&gt; codigo_zona : numerico
+nombre : texto
+descripcion: texto
+control_de_acceso: boleano
+direccion_ip_cerradura: texto [0..1]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>405</x>
+      <y>900</y>
+      <w>198</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>**Ubicacion**
+--
+&lt;&lt;pk&gt;&gt; consecutivo : numerico
+fecha : fechahora</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>594</x>
+      <y>936</y>
+      <w>540</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+&lt; detecta</panel_attributes>
+    <additional_attributes>10.0;20.0;580.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>459</x>
+      <y>711</y>
+      <w>135</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+se encuentra en v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1116</x>
+      <y>918</y>
+      <w>144</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>**LectorRFID**
+--
+&lt;&lt;pk&gt;&gt; serial : texto</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>927</x>
+      <y>612</y>
+      <w>333</w>
+      <h>324</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..*
+&lt; se instala en</panel_attributes>
+    <additional_attributes>10.0;20.0;330.0;20.0;330.0;340.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>351</x>
+      <y>225</y>
+      <w>216</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>*ProgramaAcademico*
+--
+&lt;&lt;pk&gt;&gt; codigo : numerico
+nombre : texto
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>396</x>
+      <y>495</y>
+      <w>72</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..2
+hace  ^</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>891</x>
+      <y>288</y>
+      <w>135</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+tiene &gt;</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>927</x>
+      <y>351</y>
+      <w>225</w>
+      <h>261</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+&lt; ocurre en</panel_attributes>
+    <additional_attributes>10.0;260.0;210.0;260.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>666</x>
+      <y>828</y>
+      <w>216</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>**Rol**
+--
+&lt;&lt;pk&gt;&gt; codigo : numerico
+nombre : texto
+descripcion: texto
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>684</y>
+      <w>198</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=0..1
+&lt; se asigna a</panel_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0;180.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>558</x>
+      <y>225</y>
+      <w>180</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..*
+&lt; organizado por</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0;160.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>351</x>
+      <y>423</y>
+      <w>243</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>**Enrolamiento**
+--
+&lt;&lt;fk&gt;&gt; &lt;&lt;pk&gt; codigo_persona : numerico
+&lt;&lt;fk&gt;&gt; &lt;&lt;pk&gt; codigo_programa: numerico
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>297</y>
+      <w>54</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+de ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>927</x>
+      <y>747</y>
+      <w>216</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>**Autorizacion**
+--
+&lt;&lt;fk&gt;&gt; &lt;&lt;pk&gt;&gt; codigo_zona : numerico
+&lt;&lt;fk&gt;&gt; &lt;&lt;pk&gt;&gt; codigo_rol : numerico
+fecha_inicio : fechahora
+fecha_fin: fechahora
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>657</y>
+      <w>261</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+requiere de &gt;</panel_attributes>
+    <additional_attributes>250.0;100.0;250.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>873</x>
+      <y>837</y>
+      <w>261</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*
+concede ^</panel_attributes>
+    <additional_attributes>10.0;50.0;250.0;50.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>702</x>
+      <y>126</y>
+      <w>171</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>**Dependecia**
+--
+&lt;&lt;pk&gt;&gt; codigo : numerico
+nombre: texto
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>765</x>
+      <y>198</y>
+      <w>126</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=0..1
+organizado por ^</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>261</y>
+      <w>99</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=..
+&lt;&lt; xor &gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;90.0;20.0</additional_attributes>
+  </element>
+</diagram>
