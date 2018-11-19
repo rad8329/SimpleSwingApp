@@ -1,4 +1,4 @@
-package com.rad8329.simpleswingapp.negocio.infraestructura.zona;
+package com.rad8329.simpleswingapp.infraestructura.zona;
 
 import com.rad8329.simpleswingapp.dominio.zona.Zona;
 import com.rad8329.simpleswingapp.infraestructura.zona.ZonaArchivoRepositorio;

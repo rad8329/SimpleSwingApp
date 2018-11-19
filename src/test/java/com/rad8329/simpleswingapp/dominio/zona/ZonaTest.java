@@ -1,4 +1,4 @@
-package com.rad8329.simpleswingapp.negocio.dominio.zona;
+package com.rad8329.simpleswingapp.dominio.zona;
 
 import com.rad8329.simpleswingapp.dominio.comun.excepcion.ExcepcionValidacion;
 import com.rad8329.simpleswingapp.dominio.zona.Zona;
